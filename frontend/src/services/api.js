@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://jaipriya-academy-8cqa.onrender.com/api';
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL || 'https://jaipriya-academy-8cqa.onrender.com';
+const API_BASE_URL = RAW_BASE.replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 
 export function getAccessToken() {
   return localStorage.getItem('jaipriya_access_token');
