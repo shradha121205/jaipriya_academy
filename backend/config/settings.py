@@ -174,6 +174,8 @@ CORS_ALLOWED_ORIGINS = [
 # Allow all vercel deployment URLs dynamically
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
+    r"https://jaipriya-academy-tlum-nitwtxfkw-shradha121205-9129.vercel.app",
+    r"https://jaipriya-academy-tlum-git-main-shradha121205-9129.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
