@@ -195,6 +195,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+    "https://jaipriyaacademy.in",
 ]
 
 # Allow all vercel deployment URLs dynamically
@@ -202,6 +203,7 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
     r"https://jaipriya-academy-tlum-nitwtxfkw-shradha121205-9129.vercel.app",
     r"https://jaipriya-academy-tlum-git-main-shradha121205-9129.vercel.app",
+    
 ]
 
 CORS_ALLOW_CREDENTIALS = True
