@@ -84,13 +84,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
-if os.environ.get("DATABASE_URL"):
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if DATABASE_URL:
     DATABASES = {
-        "default": dj_database_url.config(
-            conn_max_age=600,
+        "default": dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=0,
             conn_health_checks=True,
         )
     }
+    DATABASES["default"]["DISABLE_SERVER_SIDE_CURSORS"] = True
+elif os.environ.get("RENDER"):
+    raise RuntimeError("DATABASE_URL is not set")
 else:
     DATABASES = {
         "default": {
@@ -99,6 +105,7 @@ else:
         }
     }
 
+print("DB:", DATABASES["default"]["ENGINE"], DATABASES["default"].get("HOST"))
 # Custom User Model
 AUTH_USER_MODEL = 'accounts.User'
 
